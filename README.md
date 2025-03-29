@@ -34,7 +34,7 @@ The ninth program, **'9.main.py'**, serves as the primary experiment of this pap
 Initially, the OF's (Orthogonal Feature) initial convolution kernels were appropriately adjusted. 
 Subsequently, experiments were conducted under various conditions, including multiple datasets, Gaussian white noise, and whether phonemes were filtered (considering data balance). Notably, this experiment utilized audio normalization, which was not applied in the previous experiments. 
 
-The final program, **'10.Image2.py'**, integrates Orthogonal Features (OF) into image recognition, serving as an extension of T_MNIST_2.py. 
+The final program, **'10.Image2.py'**, integrates Orthogonal Features (OF) into image recognition, serving as an extension of **'2.Image1.py'**. 
 
 Finally, the author of this paper is a beginner in deep learning and has limited proficiency in coding. 
 Most of the code required assistance with design. 
