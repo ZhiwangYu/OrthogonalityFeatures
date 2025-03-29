@@ -6,7 +6,7 @@ We gratefully acknowledge these resources.
 We will now present the execution sequence of these programs and their primary functions. 
 For implementation details, please refer to the respective README files accompanying each program. 
 
-The initial program, '1.Wave2Spectrogram.py', implements Short-Time Fourier Transform (STFT) to convert raw waveforms into spectrograms. 
+The initial program, **'1.Wave2Spectrogram.py'**, implements Short-Time Fourier Transform (STFT) to convert raw waveforms into spectrograms. 
 Beyond this core functionality, it provides comparative visualization of both time-domain waveforms and their corresponding frequency-domain spectrogram representations for distinct voice commands. 
 
 The second program, '2.Image1.py', implements the convolutional kernels (including Klein Features) proposed by Love et al. (2023) for natural images, adapted here for MNIST and CIFAR-10 datasets. 
