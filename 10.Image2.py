@@ -257,10 +257,10 @@ with tf.device('/CPU:0'):
     # 4. 转换为 NumPy 数组
     transformed_matrices = np.array(transformed_matrices)
 
-    # 定义您的模型，包括 SphereFeatures 层
-    class SphereFeatures(tf.keras.layers.Layer):
+    # 定义您的模型，包括 OrthogonalFeatures 层
+    class OrthogonalFeatures(tf.keras.layers.Layer):
         def __init__(self, transformed_matrices, output_dim, kernel_size=(3, 3), strides=(1, 1), **kwargs):
-            super(SphereFeatures, self).__init__(**kwargs)
+            super(OrthogonalFeatures, self).__init__(**kwargs)
             self.transformed_matrices = transformed_matrices  # 保存 transformed_matrices
             self.output_dim = output_dim
             self.kernel_size = kernel_size
@@ -551,11 +551,11 @@ with tf.device('/CPU:0'):
         history10 = model10.fit(train_images, train_labels, batch_size=100, epochs=5, 
                            validation_data=(test_images_noise, test_labels))
         
-     #################################SF+NOL#############################################   
+     #################################OF+NOL#############################################   
         img_input = Input(shape=(32, 32, 3))
         #net = Conv2D(64)(img_input)
         #net = CircleFeatures(64)(img_input)
-        net = SphereFeatures(transformed_matrices=transformed_matrices, output_dim=64)(img_input)
+        net = OrthogonalFeatures(transformed_matrices=transformed_matrices, output_dim=64)(img_input)
         net = Activation('relu')(net)
         net = MaxPooling2D(2,2)(net)
         net = Conv2D(64, (3,3), activation='relu', padding = 'same')(net)
@@ -580,7 +580,7 @@ with tf.device('/CPU:0'):
         img_input = Input(shape=(32, 32, 3))
         #net = Conv2D(64)(img_input)
         #net = CircleFeatures(64)(img_input)
-        net = SphereFeatures(transformed_matrices=transformed_matrices, output_dim=64)(img_input)
+        net = OrthogonalFeatures(transformed_matrices=transformed_matrices, output_dim=64)(img_input)
         net = Activation('relu')(net)
         net = MaxPooling2D(2,2)(net)
         net = Conv2D(64, (3,3), activation='relu', padding = 'same')(net)
